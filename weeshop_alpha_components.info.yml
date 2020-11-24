@@ -1,0 +1,9 @@
+name: 'WeeShopAlphaComponents'
+type: module
+description: 'Provides components for WeeShop Aplha theme support perpose.'
+core: 8.x
+package: 'WeeShop'
+dependencies:
+  - field
+  - image
+  - enhanced_product

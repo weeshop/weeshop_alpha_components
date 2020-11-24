@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains weeshop_alpha_components.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function weeshop_alpha_components_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the weeshop_alpha_components module.
+    case 'help.page.weeshop_alpha_components':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides components for WeeShop Aplha theme support perpose.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function weeshop_alpha_components_theme() {
+  return [
+    'weeshop_alpha_components_photo_gallery' => [
+      'variables' => ['images' => []]
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter()
+ */
+function weeshop_alpha_components_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  // Alter product detail images to use weeshop_alpha_components_photo_gallery formatter
+  if ($entity_type->id() === 'commerce_product' && !empty($fields['detail_images'])) {
+    //throw new \Exception(get_class($fields['detail_images']));
+    $fields['detail_images']
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'weeshop_alpha_components_photo_gallery',
+        'weight' => -6
+      ]);
+  }
+}

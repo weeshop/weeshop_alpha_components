@@ -1,0 +1,13 @@
+{
+    "name": "weeshop_alpha_components",
+    "type": "drupal-module",
+    "description": "Provides components for WeeShop Alpha theme support purpose.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/weeshop_alpha_components",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/weeshop_alpha_components",
+        "source": "http://cgit.drupalcode.org/weeshop_alpha_components"
+    }
+}

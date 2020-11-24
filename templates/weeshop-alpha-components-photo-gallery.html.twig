@@ -1,0 +1,10 @@
+<div class="product-pic-zoom">
+  <img class="product-big-img" src="{{ images[0].url }}" alt="">
+</div>
+<div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
+  <div class="product-thumbs-track">
+    {% for image in images %}
+      <div class="pt" data-imgbigurl="{{ image.url }}">{{ image.content }}</div>
+    {% endfor %}
+  </div>
+</div>
