@@ -1,7 +1,7 @@
 name: 'WeeShopAlphaComponents'
 type: module
 description: 'Provides components for WeeShop Aplha theme support perpose.'
-core: 8.x
+core_version_requirement: '^8.9 || ^9'
 package: 'WeeShop'
 dependencies:
   - field
